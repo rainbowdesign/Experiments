@@ -16,11 +16,11 @@ public static class RadiumForge
 	{
 		new ComplexRecipe.RecipeElement(ElementLoader.FindElementByHash(SimHashes.Steel).tag, 25f),
 		new ComplexRecipe.RecipeElement(ElementLoader.FindElementByHash(SimHashes.Glass).tag, 25f),
-		new ComplexRecipe.RecipeElement(ElementLoader.FindElementByHash(SimHashes.SolidNaphtha).tag, 25f)
+		new ComplexRecipe.RecipeElement(ElementLoader.FindElementByHash(SimHashes.SolidNaphtha).tag, 100f)
 	};
 		ComplexRecipe.RecipeElement[] results = new ComplexRecipe.RecipeElement[1]
 		{
-	  new ComplexRecipe.RecipeElement(ElementLoader.FindElementByHash(SimHashes.LiquidHelium).tag, 50f)
+	  new ComplexRecipe.RecipeElement(ElementLoader.FindElementByHash(SimHashes.LiquidPropane).tag, 100f)
 		};
 		string obsolete_id = ComplexRecipeManager.MakeObsoleteRecipeID("GlassForge", ingredients[0].material);
 		string str = ComplexRecipeManager.MakeRecipeID("GlassForge", (IList<ComplexRecipe.RecipeElement>)ingredients, (IList<ComplexRecipe.RecipeElement>)results);

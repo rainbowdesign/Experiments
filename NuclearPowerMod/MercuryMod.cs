@@ -12,7 +12,8 @@ public static class MercuryMod
 	public static void Postfix()
 	{
 
-		ElementLoader.FindElementByHash(SimHashes.Mercury).lowTemp = 5f;
+		ElementLoader.FindElementByHash(SimHashes.SolidMercury).highTemp = 1000f;
+		ElementLoader.FindElementByHash(SimHashes.Mercury).lowTemp = 10f;
 		ElementLoader.FindElementByHash(SimHashes.Mercury).highTemp = 2400f;
 		ComplexRecipe.RecipeElement[] ingredients = new ComplexRecipe.RecipeElement[3]
 	{

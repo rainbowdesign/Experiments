@@ -241,34 +241,24 @@ namespace Klei.AI
             {
                 underPopulationDeathRate = 5.66666675f,
                 minCountPerKG = 0.4f,
-                populationHalfLife = 12000f,
-                maxCountPerKG = 500000f,
+                populationHalfLife = 120000f,
+                maxCountPerKG = 10000,
                 overPopulationHalfLife = 1200f,
                 minDiffusionCount = 1000,
-                diffusionScale = 0.001f,
+                diffusionScale = 0.05f,
                 minDiffusionInfestationTickCount = 1
             });
-            base.AddGrowthRule(new ElementGrowthRule(SimHashes.Chlorine)
+            base.AddGrowthRule(new ElementGrowthRule(SimHashes.Mercury)
             {
-                underPopulationDeathRate = 0f,
-                populationHalfLife = -300f,
-                overPopulationHalfLife = 3000f,
-                maxCountPerKG = 4500f,
-                diffusionScale = 0.05f
+                populationHalfLife = 30f
             });
-            base.AddGrowthRule(new ElementGrowthRule(SimHashes.BleachStone)
+            base.AddGrowthRule(new ElementGrowthRule(SimHashes.Water)
             {
-                populationHalfLife = 10f,
-                overPopulationHalfLife = -300f,
-                minDiffusionCount = 100000,
-                diffusionScale = 0.001f
+                populationHalfLife = -1000f
             });
-            base.AddGrowthRule(new ElementGrowthRule(SimHashes.ChlorineGas)
+            base.AddGrowthRule(new ElementGrowthRule(SimHashes.Steam)
             {
-                populationHalfLife = -300f,
-                overPopulationHalfLife = 10f,
-                minDiffusionCount = 100000,
-                diffusionScale = 0.001f
+                populationHalfLife = -1000f
             });
 
 			/*
@@ -311,25 +301,25 @@ namespace Klei.AI
             base.InitializeElemExposureArray(ref base.elemExposureInfo, Disease.DEFAULT_EXPOSURE_INFO);
             base.AddExposureRule(new ExposureRule
             {
-                populationHalfLife = float.PositiveInfinity
+                populationHalfLife = 120000f
             });
-            base.AddExposureRule(new ElementExposureRule(SimHashes.DirtyWater)
+            base.AddExposureRule(new ElementExposureRule(SimHashes.Water)
             {
-                populationHalfLife = -12000f
+                populationHalfLife = -500f
             });
-            base.AddExposureRule(new ElementExposureRule(SimHashes.ContaminatedOxygen)
+            base.AddExposureRule(new ElementExposureRule(SimHashes.Steam)
             {
-                populationHalfLife = -12000f
+                populationHalfLife = -500f
             });
-            base.AddExposureRule(new ElementExposureRule(SimHashes.Oxygen)
+            base.AddExposureRule(new ElementExposureRule(SimHashes.Mercury)
             {
-                populationHalfLife = 3000f
+                populationHalfLife = 30f
             });
-            base.AddExposureRule(new ElementExposureRule(SimHashes.ChlorineGas)
-            {
-                populationHalfLife = 10f
-            });
-        }
+			base.AddExposureRule(new ElementExposureRule(SimHashes.MercuryGas)
+			{
+				populationHalfLife = 30f
+			});
+		}
 
         public override List<Descriptor> GetDiseaseSourceDescriptors()
         {

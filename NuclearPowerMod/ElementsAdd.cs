@@ -71,16 +71,21 @@ namespace NuclearPowerMod
 			Element radium = ElementLoader.FindElementByHash(SimHashes.Radium);
 			Element radiumgas = ElementLoader.FindElementByHash(SimHashes.Helium);
 			Element radiumliquid = ElementLoader.FindElementByHash(SimHashes.LiquidHelium);
+			Element naphta = ElementLoader.FindElementByHash(SimHashes.SolidNaphtha);
+			Element prop = ElementLoader.FindElementByHash(SimHashes.LiquidPropane);
 			radiumgas.name = "Radium Gas";
 			radiumliquid.name = "Liquid Radium";
+			prop.name = "Radium Precursor";
 			radiumgas.lowTemp = 6500f;
 			radiumgas.defaultValues.temperature = 9000f;
 			radiumliquid.defaultValues.temperature = 5000f;
 			radiumliquid.lowTemp = 500f;
 			radiumliquid.highTemp = 8000f;
+			naphta.highTemp = 1000f;
 			radium.highTemp = 1200f;
 			radium.highTempTransitionTarget = radiumliquid.id;
-			radiumliquid.lowTempTransitionTarget = radium.id;
+			prop.lowTempTransitionTarget = radium.id;
+			radiumliquid.lowTempTransitionTarget = naphta.id;
 			radiumliquid.attributeModifiers = radium.attributeModifiers;
 			radiumgas.attributeModifiers = radium.attributeModifiers;
 
